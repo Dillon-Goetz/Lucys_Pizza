@@ -1,27 +1,27 @@
 import Image from "next/image"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import HeartDivider from "@/components/heart-divider"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Phone, MapPin, Clock, Mail } from "lucide-react"
 
-export default function ContactPage() {
+export default function Contact() {
   return (
-    <div className="min-h-screen">
+    <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1600"
-            alt="Lucy's Pizza Contact"
+            src="/placeholder.svg?height=800&width=1920"
+            alt="Lucy's Pizza contact"
             fill
             className="object-cover brightness-50"
-            priority
           />
         </div>
-        <div className="container relative z-10 text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            We'd love to hear from you! Reach out with any questions or to make a reservation
+        <div className="container relative z-10 text-center text-green-800">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 font-playfair">Contact Us</h1>
+          <p className="text-xl md:text-2xl max-w-2xl mx-auto text-red-500">
+            Get in touch with us for orders, reservations, or just to say hello!
           </p>
         </div>
       </section>
@@ -33,216 +33,130 @@ export default function ContactPage() {
         <div className="flex-1 bg-italian-red"></div>
       </div>
 
-      {/* Contact Info & Form Section */}
+      {/* Contact Information */}
       <section className="py-16 container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
-            <div className="space-y-8">
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-start">
-                    <div className="h-10 w-10 rounded-full bg-italian-red/10 flex items-center justify-center mr-4">
-                      <MapPin className="h-5 w-5 text-italian-red" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2">Our Location</h3>
-                      <address className="not-italic text-muted-foreground">
-                        123 Main Street
-                        <br />
-                        Ossining, NY 10562
-                        <br />
-                        United States
-                      </address>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-start">
-                    <div className="h-10 w-10 rounded-full bg-italian-green/10 flex items-center justify-center mr-4">
-                      <Phone className="h-5 w-5 text-italian-green" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2">Phone</h3>
-                      <p className="text-muted-foreground">
-                        <a href="tel:+19145551234" className="hover:text-italian-red">
-                          (914) 555-1234
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-start">
-                    <div className="h-10 w-10 rounded-full bg-italian-red/10 flex items-center justify-center mr-4">
-                      <Mail className="h-5 w-5 text-italian-red" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2">Email</h3>
-                      <p className="text-muted-foreground">
-                        <a href="mailto:info@lucyspizza.com" className="hover:text-italian-red">
-                          info@lucyspizza.com
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-start">
-                    <div className="h-10 w-10 rounded-full bg-italian-green/10 flex items-center justify-center mr-4">
-                      <Clock className="h-5 w-5 text-italian-green" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2">Hours</h3>
-                      <ul className="space-y-1 text-muted-foreground">
-                        <li>Monday - Thursday: 11am - 10pm</li>
-                        <li>Friday - Saturday: 11am - 11pm</li>
-                        <li>Sunday: 12pm - 9pm</li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
           {/* Contact Form */}
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
-            <Card>
-              <CardContent className="p-6">
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Name
-                      </label>
-                      <input
-                        id="name"
-                        type="text"
-                        className="w-full p-2 border rounded-md"
-                        placeholder="Your name"
-                        required
-                      />
+          <Card className="border-none shadow-lg">
+            <CardHeader>
+              <CardTitle className="text-2xl font-playfair">Send us a Message</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium mb-2">
+                    First Name
+                  </label>
+                  <Input id="firstName" placeholder="Your first name" />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium mb-2">
+                    Last Name
+                  </label>
+                  <Input id="lastName" placeholder="Your last name" />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  Email
+                </label>
+                <Input id="email" type="email" placeholder="your.email@example.com" />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                  Phone Number
+                </label>
+                <Input id="phone" type="tel" placeholder="(914) 555-0123" />
+              </div>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                  Subject
+                </label>
+                <Input id="subject" placeholder="What's this about?" />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  Message
+                </label>
+                <Textarea id="message" placeholder="Tell us how we can help you..." className="min-h-[120px]" />
+              </div>
+              <Button className="w-full bg-italian-red hover:bg-italian-red/90">Send Message</Button>
+            </CardContent>
+          </Card>
+
+          {/* Contact Information Cards */}
+          <div className="space-y-6">
+            <Card className="border-none shadow-lg">
+              <CardContent className="pt-6">
+                <div className="flex items-start space-x-4">
+                  <div className="h-12 w-12 rounded-full bg-italian-red/10 flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 text-italian-red" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 font-playfair">Phone</h3>
+                    <p className="text-muted-foreground mb-2">Call us for orders or catering questions</p>
+                    <p className="text-lg font-medium">(914) 762-0001</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg">
+              <CardContent className="pt-6">
+                <div className="flex items-start space-x-4">
+                  <div className="h-12 w-12 rounded-full bg-italian-green/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-italian-green" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 font-playfair">Address</h3>
+                    <p className="text-muted-foreground mb-2">Visit us in the heart of Ossining</p>
+                    <p className="text-lg">26 S Highland Ave</p>
+                    <p className="text-lg">Ossining, NY 10562</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg">
+              <CardContent className="pt-6">
+                <div className="flex items-start space-x-4">
+                  <div className="h-12 w-12 rounded-full bg-italian-red/10 flex items-center justify-center flex-shrink-0">
+                    <Clock className="h-6 w-6 text-italian-red" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 font-playfair">Hours</h3>
+                    <p className="text-muted-foreground mb-2">We're open 7 days a week</p>
+                    <div className="space-y-1">
+                      <p className="text-sm">Monday - Thursday: 11am - 10pm</p>
+                      <p className="text-sm">Sunday: 12pm - 10pm</p>
                     </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <input
-                        id="email"
-                        type="email"
-                        className="w-full p-2 border rounded-md"
-                        placeholder="Your email"
-                        required
-                      />
-                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium">
-                      Phone
-                    </label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      className="w-full p-2 border rounded-md"
-                      placeholder="Your phone number"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Subject
-                    </label>
-                    <input
-                      id="subject"
-                      type="text"
-                      className="w-full p-2 border rounded-md"
-                      placeholder="Subject"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      className="w-full p-2 border rounded-md min-h-[150px]"
-                      placeholder="Your message"
-                      required
-                    ></textarea>
-                  </div>
-                  <Button className="w-full bg-italian-red hover:bg-italian-red/90">Send Message</Button>
-                </form>
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      <HeartDivider />
-
       {/* Map Section */}
-      <section className="py-12">
+      <section className="py-16 bg-muted/30">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-6 text-center">Find Us</h2>
-          <div className="relative h-[400px] rounded-lg overflow-hidden">
-            <Image
-              src="/placeholder.svg?height=800&width=1600"
-              alt="Map location of Lucy's Pizza"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-italian-red text-white p-4 rounded-lg shadow-lg">
-                <div className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-2" />
-                  <span className="font-bold">Lucy's Pizza</span>
-                </div>
-              </div>
-            </div>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair">Find Us</h2>
+            <p className="text-muted-foreground">Located in the heart of downtown Ossining with plenty of parking</p>
+          </div>
+          <div className="bg-muted rounded-lg h-96 flex items-center justify-center">
+            <p className="text-muted-foreground">Interactive map would be embedded here</p>
           </div>
         </div>
       </section>
 
-      {/* Reservation Section */}
-      <section className="py-16 bg-muted/30 heart-pattern">
+      {/* Order CTA */}
+      <section className="py-16 bg-italian-red text-black">
         <div className="container text-center">
-          <h2 className="text-3xl font-bold mb-4">Make a Reservation</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            Reserve a table for your next visit to ensure the best experience
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-italian-red hover:bg-italian-red/90">
-              <a href="tel:+19145551234">Call to Reserve</a>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <a href="#online-reservation">Online Reservation</a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Online Ordering */}
-      <section id="online-reservation" className="py-16 bg-italian-green text-white">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Order Online</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Enjoy Lucy's Pizza from the comfort of your home. Order online for pickup or delivery!
-          </p>
-          <Button asChild size="lg" className="bg-white text-italian-green hover:bg-white/90">
-            <a href="#">Order Now</a>
-          </Button>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair">Ready to Order?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">Skip the wait and order online for pickup or delivery</p>
+          <Button className="bg-white text-italian-red hover:bg-white/90 text-lg px-8 py-3">Order Online Now</Button>
         </div>
       </section>
     </div>

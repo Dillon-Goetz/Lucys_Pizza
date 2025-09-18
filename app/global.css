@@ -1,0 +1,114 @@
+/* global.css */
+
+@import "tailwindcss";
+
+/*
+ * **CRUCIAL FOR SHADCN UI STYLING (Light Mode Only):**
+ * Define your CSS variables here.
+ * Shadcn UI components extensively use these variables for theming.
+ * Your custom Italian flag colors are also defined here.
+ * Ensure the HSL values (hue, saturation, lightness) are correct.
+ */
+:root {
+  /* Italian Flag Colors (using HSL for consistency with Shadcn)
+  --italian-red: 0, 100%, 45%; /* Example HSL for #CE2B37 */
+  /* --italian-green: 147 100% 29%; /* Example HSL for #009246 */
+  /* --italian-white: 60 50% 97%; Example HSL for #F1F2F0 */ 
+
+  /* Shadcn UI Variables (Light Mode) */
+  --background: 0 0% 100%;       /* Pure White */
+  --foreground: 222.2 84% 4.9%;  /* Very Dark Blue/Black */
+  --border: 214.3 31.8% 91.4%;   /* Light Gray */
+  --input: 214.3 31.8% 91.4%;    /* Light Gray */
+  --ring: 222.2 84% 4.9%;        /* Very Dark Blue/Black */
+  --radius: 0.5rem;              /* Default border radius */
+
+  /* Primary, Secondary, etc. for light mode */
+  --primary: 222.2 47.4% 11.2%;       /* Dark Blue */
+  --primary-foreground: 210 40% 98%; /* Off-White */
+  --secondary: 210 40% 96.1%;       /* Light Gray */
+  --secondary-foreground: 222.2 47.4% 11.2%; /* Dark Blue */
+  --muted: 210 40% 96.1%;           /* Light Gray */
+  --muted-foreground: 215.4 16.3% 46.9%; /* Medium Gray */
+  --accent: 210 40% 96.1%;          /* Light Gray */
+  --accent-foreground: 222.2 47.4% 11.2%; /* Dark Blue */
+  --destructive: 0 84.2% 60.2%;     /* Red */
+  --destructive-foreground: 210 40% 98%; /* Off-White */
+  --card: 0 0% 100%;                /* White */
+  --card-foreground: 222.2 84% 4.9%; /* Dark Blue */
+  --popover: 0 0% 100%;             /* White */
+  --popover-foreground: 222.2 84% 4.9%; /* Dark Blue */
+}
+
+/* example from tailwind
+@theme {
+  --breakpoint-3xl: 120rem;
+  --color-avocado-100: oklch(0.99 0 0);
+  --color-avocado-200: oklch(0.98 0.04 113.22);
+  --color-avocado-300: oklch(0.94 0.11 115.03);
+  --color-avocado-400: oklch(0.92 0.19 114.08);
+  --color-avocado-500: oklch(0.84 0.18 117.33);
+  --color-avocado-600: oklch(0.53 0.12 118.34);
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+  /* ... */
+/* } */
+/*
+ * **CRUCIAL FOR SHADCN UI BASE STYLING:**
+ * Apply base styles. These ensure the body has the correct background and text colors
+ * from your defined CSS variables, which is the foundation of Shadcn UI's look.
+ */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/*
+ * Customizing the `container` utility using the new @utility directive.
+ * The `screens` (breakpoints) defined in `tailwind.config.ts` will still be used
+ * by Tailwind when it processes the `container` utility and generates responsive variants.
+ */
+@utility container {
+  margin-inline: auto; /* Centers the container */
+  padding-inline: 2rem; /* Adds horizontal padding */
+}
+
+
+/* Heart pattern background */
+.heart-pattern {
+  background-image: radial-gradient(circle, rgba(206, 43, 55, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground));
+}
+
+/* Carousel Styling */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1f2937; /* A dark gray color */
+}
+
+.swiper-pagination-bullet-active-main {
+    background: #166534; /* Match your site's green */
+}

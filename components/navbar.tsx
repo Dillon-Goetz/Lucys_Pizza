@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Heart } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,10 +21,16 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky bg-white top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Heart className="h-6 w-6 text-italian-red" fill="currentColor" />
+            <Image
+            src="/favicon.ico" // Path to your favicon.ico in the public directory
+            alt="Lucy's Pizza Icon" // Accessible description of the icon
+            width={25} // Set desired width (e.g., 24px to match h-6 w-6)
+            height={25} // Set desired height
+            className="rounded-full" // Optional: Add rounded-full if your favicon is not square or you want a circular look
+          />
           <span className="text-2xl font-bold font-playfair">Lucy&apos;s Pizza</span>
         </Link>
 
@@ -58,7 +65,7 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Button className="bg-italian-red hover:bg-italian-red/90">Order Now</Button>
+          <Button className="bg-italian-red hover:bg-italian-red/90">Order Online (Coming Soon)</Button>
         </nav>
 
         {/* Mobile navigation */}
@@ -78,7 +85,7 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <Button className="bg-italian-red hover:bg-italian-red/90 w-full">Order Now</Button>
+              <Button className="bg-red-500 hover:bg-red-400 text-white w-full"><span>Order Now (Coming Soon)</span></Button>
             </nav>
           </div>
         )}

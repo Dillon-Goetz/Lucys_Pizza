@@ -1,12 +1,17 @@
+// tailwind.config.ts
+
 import type { Config } from "tailwindcss";
 
 const config = {
-  darkMode: "class", // Keep this for compatibility, but we won't use it
+  darkMode: "class", // optional, still supported in v4
+
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  prefix: "",
+
   theme: {
     container: {
       center: true,
@@ -17,6 +22,10 @@ const config = {
     },
     extend: {
       colors: {
+        "italian-red": "#CE2B37",
+        "italian-green": "#009246",
+        "italian-white": "#F1F2F0",
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -50,27 +59,33 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        italian: {
-          green: "hsl(var(--italian-green))",
-          red: "hsl(var(--italian-red))",
-          white: "hsl(var(--italian-white))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      fontFamily: {
-        sans: ["var(--font-inter)"],
-        playfair: ["var(--font-playfair)"],
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
       },
-      backgroundImage: {
-        "heart-pattern": "url('/heart-pattern.png')",
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        playfair: ["var(--font-playfair)"],
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 } satisfies Config;
 
 export default config;

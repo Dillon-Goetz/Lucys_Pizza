@@ -12,28 +12,28 @@ export default function GalleryPage() {
 
   const galleryImages = [
     {
-      src: "/placeholder.svg?height=600&width=800",
+      src: "/images/pizza-1.jpg?height=600&width=800",
       alt: "Margherita pizza fresh from the oven",
       category: "food",
     },
     {
-      src: "/placeholder.svg?height=600&width=800",
+      src: "/images/windowtable.jpeg?height=600&width=800",
       alt: "Lucy's Pizza restaurant interior",
       category: "restaurant",
     },
     {
-      src: "/placeholder.svg?height=600&width=800",
+      src: "/images/cuttingpizza.jpg?height=600&width=800",
       alt: "Chef preparing pizza dough",
       category: "food",
     },
     {
       src: "/placeholder.svg?height=600&width=800",
-      alt: "Community pizza making class",
+      alt: "Community enojoying Lucys",
       category: "community",
     },
     {
       src: "/placeholder.svg?height=600&width=800",
-      alt: "Wood-fired oven with flames",
+      alt: "Pizza in oven",
       category: "restaurant",
     },
     {
@@ -63,7 +63,7 @@ export default function GalleryPage() {
     },
     {
       src: "/placeholder.svg?height=600&width=800",
-      alt: "Bar area with Italian wines",
+      alt: "Ossining High School students enjoying pizza",
       category: "restaurant",
     },
     {
@@ -86,9 +86,9 @@ export default function GalleryPage() {
             priority
           />
         </div>
-        <div className="container relative z-10 text-center text-white">
+        <div className="container relative z-10 text-center text-red-600">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Our Gallery</h1>
-          <p className="text-xl max-w-2xl mx-auto">
+          <p className="text-xl max-w-2xl mx-auto text-green-900">
             A visual journey through our restaurant, food, and community events
           </p>
         </div>
@@ -109,7 +109,7 @@ export default function GalleryPage() {
               <TabsTrigger
                 key={category.id}
                 value={category.id}
-                className="px-6 py-2 data-[state=active]:bg-italian-red data-[state=active]:text-white"
+                className="px-6 py-2 data-[state=active]:bg-italian-red data-[state=active]:text-red-600"
               >
                 {category.label}
               </TabsTrigger>

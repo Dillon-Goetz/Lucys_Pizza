@@ -296,7 +296,7 @@ const menuItems: { [key: string]: MenuItem[] } = {
             Let Lucy's Pizza cater your next event! We offer special catering menus for parties, corporate events, and
             special occasions.
           </p>
-          <p className="mb-8">Contact us at (914) 555-1234 or email catering@lucyspizza.com for more information.</p>
+          <p className="mb-8">Contact us at (914) 762-0001 or email catering@lucyspizza.com for more information.</p>
         </div>
       </section>
     </div>

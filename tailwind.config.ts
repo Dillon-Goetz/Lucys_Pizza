@@ -22,9 +22,9 @@ const config = {
     },
     extend: {
       colors: {
-        "italian-red": "#CE2B37",
-        "italian-green": "#009246",
-        "italian-white": "#F1F2F0",
+"italian-red": "hsl(var(--italian-red))",
+"italian-green": "hsl(var(--italian-green))",
+"italian-white": "hsl(var(--italian-white))",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

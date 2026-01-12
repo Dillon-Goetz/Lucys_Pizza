@@ -72,7 +72,7 @@ export default function MenuPage() {
         
         <div className="mt-12 bg-italian-green text-white p-8 rounded-lg">
           <h3 className="text-2xl font-bold mb-2">Planning an Event?</h3>
-          <p className="text-lg">Contact us at (914) 555-1234 or email catering@lucyspizza.com</p>
+          <p className="text-lg">Contact us at (914) 762-0001 or email catering@lucyspizza.com</p>
         </div>
       </section>
     </div>

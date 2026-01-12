@@ -19,7 +19,7 @@ export default function Footer() {
           />
           <span className="text-2xl font-bold font-playfair">Lucy&apos;s Pizza</span>
             </div>
-            <p className="text-muted-foreground text-sm">Authentic and casual pizzeria serving NY-style pizza, sandwiches, and salads.</p>
+            <p className="text-muted-foreground text-sm">Proudly serving the Ossining and Westchester community since 1976 with authentic New York–style pizza, homemade pasta, sandwiches, and salads. Your neighborhood spot for a true taste of home.</p>
           </div>
 
           <div>

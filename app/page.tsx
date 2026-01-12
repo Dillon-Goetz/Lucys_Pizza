@@ -4,8 +4,7 @@ import { Heart, Pizza, Users, Clock, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ItalianFlagDivider from "@/components/ItalianFlagDivider"; 
-import InstagramGrid from "@/components/InstagramGrid";
-import { curatedPosts } from "@/src/data/instagram-posts";
+
 
 
 
@@ -46,7 +45,7 @@ export default function HomePage() {
             size="lg"
             className="border-red-400 text-red-400 hover:bg-red-50/10 bg-transparent"
           >
-            <Link href="/contact">Cater Your Next Event!</Link>
+            <Link href="/menu#catering">Cater Your Next Event!</Link>
           </Button>
         </div>
       </div>
@@ -115,7 +114,9 @@ export default function HomePage() {
       </section>
 
  {/* Instagram Grid Section */}
-      <section className="py-16 bg-white">
+ {/* /InstagramGrid from "@/components/InstagramGrid";
+import { curatedPosts } from "@/src/data/instagram-posts"; */}
+      {/* <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">Follow Us on Instagram</h3>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
@@ -123,26 +124,64 @@ export default function HomePage() {
           </p>
           
           {/* --- 2. THE COMPONENT USAGE STAYS EXACTLY THE SAME --- */}
-          <InstagramGrid posts={curatedPosts} />
+          {/* <InstagramGrid posts={curatedPosts} />
 
           <div className="mt-8">
-            <Button
-              asChild
-              size="lg"
-              className="bg-pink-600 hover:bg-pink-700 text-white"
-            >
-              <a
-                href="https://www.instagram.com/lucys_pizza/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                asChild
+                size="lg"
+                // Added /80 to each color stop for 80% opacity.
+                // On hover, we remove the opacity modifier by resetting the colors.
+                className="bg-gradient-to-tr from-[#f9ce34]/80 via-[#ee2a7b]/80 to-[#6228d7]/80 hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] text-white font-bold shadow-sm"
               >
-                Follow Us on Instagram
-              </a>
-            </Button>
+                <a
+                  href="https://www.instagram.com/lucys_pizza/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Follow Us on Instagram
+                </a>
+              </Button>
           </div>  
         </div>
-      </section>
+      </section> */} 
 
+      {/* Instagram Embed Section */}
+<section className="py-16 bg-white">
+  <div className="container mx-auto px-4 flex flex-col items-center text-center">
+    <h3 className="text-3xl font-bold text-gray-900 mb-4">
+      Follow Us on Instagram
+    </h3>
+    <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+      See our latest pizzas, specials, and community moments.
+    </p>
+
+    <iframe
+      src="https://www.instagram.com/lucys_pizza/embed"
+      height="520"
+      scrolling="no"
+      frameBorder="0"
+      allowTransparency
+      className="w-full max-w-md rounded-lg shadow mb-8"
+    />
+
+    <Button
+      asChild
+      size="lg"
+      className="bg-gradient-to-tr from-[#f9ce34]/80 via-[#ee2a7b]/80 to-[#6228d7]/80
+                 hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7]
+                 text-white font-bold shadow-md"
+    >
+      <a
+        href="https://www.instagram.com/lucys_pizza/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Follow Us on Instagram
+      </a>
+    </Button>
+  </div>
+</section>
 
       {/* Quick Info Section */}
       <section className="py-16 bg-green-800">
